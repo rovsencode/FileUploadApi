@@ -35,7 +35,7 @@ namespace P326FirstWebAPI.Controllers
                 CreatedTime=p.CreatedDate,
                 UpdateTime=p.UpdateDate
             }).ToList();           
-            return Ok();
+            return StatusCode(StatusCodes.Status200OK,productListDto);
         }
         [Route("getOne")]
         [HttpGet]
@@ -45,9 +45,9 @@ namespace P326FirstWebAPI.Controllers
             if (product == null) return StatusCode(StatusCodes.Status404NotFound);
             ProductReturnDto productReturnDto = new() {
                 Name=product.Name,
-                CostPrice=product.CostPrice ,
-                SalePrice=product.SalePrice ,
-                IsActive=product.IsActive ,
+                CostPrice=product.CostPrice,
+                SalePrice=product.SalePrice,
+                IsActive=product.IsActive,
             };
 
             return Ok(productReturnDto);
