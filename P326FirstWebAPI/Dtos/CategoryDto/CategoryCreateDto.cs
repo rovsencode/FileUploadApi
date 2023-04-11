@@ -1,5 +1,4 @@
-﻿using P326FirstWebAPI.Dtos.ProductDtos;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace P326FirstWebAPI.Dtos.CategoryDto
 {

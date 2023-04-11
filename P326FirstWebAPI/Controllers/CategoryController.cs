@@ -99,7 +99,7 @@ namespace P326FirstWebAPI.Controllers
 
 
             [HttpDelete("{id}")]
-            public IActionResult DeleteProduct(int id)
+            public IActionResult Delete(int id)
             {
                 var category = _context.Categories.FirstOrDefault(c => c.Id == id);
                 if (category == null) return NotFound();
@@ -109,7 +109,7 @@ namespace P326FirstWebAPI.Controllers
             }
 
             [HttpPut("{id}")]
-            public IActionResult UpdateProduct(int id, CategoryUpdateDto categoryUpdateDto)
+            public IActionResult Update(int id, CategoryUpdateDto categoryUpdateDto)
             {
                 bool isExist = _context.Categories.Any(c => c.Name.ToLower() == categoryUpdateDto.Name.ToLower() && c.Id != id);
                 if (isExist)
