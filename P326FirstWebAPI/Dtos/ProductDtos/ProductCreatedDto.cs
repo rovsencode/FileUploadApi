@@ -18,7 +18,7 @@ namespace P326FirstWebAPI.Dtos.ProductDtos
                 .NotNull().WithMessage("bos ola bilmez");
             RuleFor(p => p.SalePrice).GreaterThanOrEqualTo(0).WithMessage("0 dan boyuk olmalidir.");
             RuleFor(p => p.CostPrice).GreaterThanOrEqualTo(0).WithMessage("0 dan boyuk olmalidir");
-            RuleFor(p = p => p.IsActive).Equal(true).WithMessage("true olmalidir...")
+            RuleFor(p  => p.IsActive).Equal(true).WithMessage("true olmalidir...")
                 .NotNull().WithMessage("bosh qoymaq olmaz");
 
             RuleFor(p => p).Custom((p, context) =>

@@ -6,6 +6,8 @@ using P326FirstWebAPI.Models;
 
 namespace P326FirstWebAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ProductController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
@@ -14,7 +16,7 @@ namespace P326FirstWebAPI.Controllers
         {
             _appDbContext = appDbContext;
         }
-
+        [Route("GetAll")]
         [HttpGet]
         public IActionResult GetAll(int page,string search)
         {

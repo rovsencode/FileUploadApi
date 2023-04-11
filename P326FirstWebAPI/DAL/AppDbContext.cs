@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FirstApi.Data.DAL.Configurations;
+using Microsoft.EntityFrameworkCore;
 using P326FirstWebAPI.Data.Configuritions;
 using P326FirstWebAPI.Models;
 
@@ -16,6 +17,7 @@ namespace P326FirstWebAPI.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProductConfigurition());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
